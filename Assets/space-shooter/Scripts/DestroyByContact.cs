@@ -5,6 +5,7 @@ public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject playerExplosion;
+	public GameObject Weihnachtsmuetze;
     public int scoreValue;
 
     private GameController gameController;
@@ -43,5 +44,10 @@ public class DestroyByContact : MonoBehaviour
         gameController.AddScore(scoreValue);
         Destroy(other.gameObject);
         Destroy(gameObject);
+
+		if (other.tag == "Weihnachtsmuetze") 
+		{
+			Destroy (Weihnachtsmuetze);
+		}
     }
 }
