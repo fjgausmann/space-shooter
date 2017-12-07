@@ -3,10 +3,14 @@ using System.Collections;
 
 public class Mover : MonoBehaviour
 {
-	public float speed;
+    public float speed;
 
-	void Start ()
-	{
-		GetComponent<Rigidbody>().velocity = transform.forward * speed;
-	}
+    private Rigidbody rb;
+    private Quaternion drehung;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * speed;
+    }
 }
